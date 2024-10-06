@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply bg-bg min-h-screen flex items-start justify-center text-hero-text w-full h-full;
+}
+
+/* navbar container */
+.navbar {
+  @apply w-full flex items-center justify-between px-4 h-full text-teal-50 py-4;
+}
