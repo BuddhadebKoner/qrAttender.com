@@ -1,45 +1,18 @@
-import { Link } from "react-router-dom";
-
 const Navbar = () => {
    return (
-      <header className="navbar ">
-         <nav className="container mx-auto flex justify-between items-center px-4">
-            <ul className="flex space-x-8 text-lg font-semibold ">
-               <li>
-                  <Link
-                     to="/"
-                     className="hover:text-hero-text transition-colors duration-300"
-                  >
-                     Home
-                  </Link>
-               </li>
-               <li>
-                  <Link
-                     to="/explore"
-                     className="hover:text-hero-text transition-colors duration-300"
-                  >
-                     Explore
-                  </Link>
-               </li>
-               <li>
-                  <Link
-                     to="/about"
-                     className="hover:text-hero-text transition-colors duration-300"
-                  >
-                     About
-                  </Link>
-               </li>
-               <li>
-                  <Link
-                     to="/contact"
-                     className="hover:text-hero-text transition-colors duration-300"
-                  >
-                     Contact
-                  </Link>
-               </li>
-            </ul>
-         </nav>
-      </header>
+      <>
+         <div className="bg-white/10 backdrop-blur-md w-full h-full py-3 px-5 rounded-lg flex justify-between items-center shadow-md">
+            <a href="/">
+               <h1 className="text-lg font-bold text-hero-text">Qr Attender</h1>
+            </a>
+            <a
+               target="_blank"
+               href="https://play.google.com/store/apps/details?id=com.rajislab.qrattender" className="text-lg font-bold text-hero-text px-5 py-1 bg-white rounded-full flex items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+               Download Now
+               <img className="mx-2" src="/assets/icons/download.svg" alt="download-icon" />
+            </a>
+         </div>
+      </>
    );
 }
 

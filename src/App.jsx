@@ -1,20 +1,22 @@
-import { Route, Routes } from "react-router-dom";
-import RootLayout from "./_root/RootLayout";
-import { About, Contact, Explore, Footer, Home } from "./_root/pages";
+import Features from "./components/Features";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Testimonials from "./components/Testimonials";
 
 const App = () => {
   return (
-    <main>
-      <Routes>
-        <Route element={<RootLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </main>
+    <>
+      <header className="z-50 w-full h-fit flex flex-1 justify-between items-center pt-5 px-5 md:px-[5rem] lg:px-[7rem] fixed">
+        <Navbar />
+      </header>
+      <main className="w-full h-full  py-10 -z-30">
+        <Home />
+        <Features />
+        <Testimonials />
+      </main>
+      <Footer />
+    </>
   )
 }
 
