@@ -1,4 +1,4 @@
-import { steps } from "../constant/constants";
+import { FeatureCards, steps } from "../constant/constants";
 
 const Features = () => {
   return (
@@ -12,49 +12,25 @@ const Features = () => {
         </p>
 
         <div className="w-full h-full flex flex-col gap-5 mt-10 md:flex-row md:gap-7 lg:gap-10">
-          {/* Card 1 */}
-          <div className="w-full md:w-1/3 h-fit bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 bg-opacity-10 backdrop-blur-lg rounded-xl flex flex-col justify-center items-center py-5 gap-3 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 transform">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/20 p-2 rounded-full"
-              src="/assets/icons/groups.svg"
-              alt="group attendance" />
-            <h1 className="text-white font-bold">Build an Ecosystem</h1>
-            <p className="text-white text-center">
-              Create a thriving community of Coding Heroes who promote tech with like-minded individuals from colleges across India.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="w-full md:w-1/3 h-fit bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 bg-opacity-10 backdrop-blur-lg rounded-xl flex flex-col justify-center items-center py-5 gap-3 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 transform">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/20 p-2 rounded-full"
-              src="/assets/icons/groups.svg"
-              alt="group attendance" />
-            <h1 className="text-white font-bold">Collaborative Space</h1>
-            <p className="text-white text-center">
-              Foster collaboration between students and developers, promoting innovative projects within a growing community.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="w-full md:w-1/3 h-fit bg-gradient-to-r from-teal-400 via-green-400 to-lime-500 bg-opacity-10 backdrop-blur-lg rounded-xl flex flex-col justify-center items-center py-5 gap-3 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 transform">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/20 p-2 rounded-full"
-              src="/assets/icons/groups.svg"
-              alt="group attendance" />
-            <h1 className="text-white font-bold">Sustainable Growth</h1>
-            <p className="text-white text-center">
-              Join a community that nurtures sustainable growth and continuous learning, focusing on eco-friendly technology practices.
-            </p>
-          </div>
+          {FeatureCards.map((card) => (
+        <div
+          key={card.id}
+          className={`w-full md:w-1/3 h-fit bg-gradient-to-r ${card.gradient} bg-opacity-10 backdrop-blur-lg rounded-xl flex flex-col justify-center items-center py-5 gap-3 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 transform`}
+        >
+          <img
+            width={50}
+            height={50}
+            className="bg-white/20 p-2 rounded-full"
+            src={card.imgSrc}
+            alt={card.imgAlt}
+          />
+          <h1 className="text-white font-bold">{card.title}</h1>
+          <p className="text-white text-center">
+            {card.description}
+          </p>
         </div>
-
+      ))}
+        </div>
       </div>
       <div className="rounded-xl w-full h-fit flex flex-col items-center justify-center px-5 md:px-[10rem] md:py-[10rem] py-10 mt-10 md:bg-[#030712]">
         <h1 className="md:text-4xl text-3xl text-white font-extrabold mb-5 text-center">
