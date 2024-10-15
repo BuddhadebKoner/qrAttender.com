@@ -13,7 +13,12 @@ const Home = () => {
                Know More
             </a>
             <p className="text-gray-400 mt-10 relative z-10">to being a premium member</p>
-            <h1 className="text-hero-text text-xl font-semibold relative z-10">₹1,000 for pro user</h1>
+            <div className="flex gap-5 justify-center items-center">
+               <h1 className="text-gray-400 text-2xl font-semibold relative z-10 line-through">
+                  ₹180 per month
+               </h1>
+               <h1 className="text-hero-text decoration-none text-xl font-semibold relative z-10">( Offer Ended )</h1>
+            </div>
          </div>
       </>
    )

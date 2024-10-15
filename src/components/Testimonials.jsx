@@ -26,9 +26,9 @@ const Testimonials = () => {
    }, []);
 
    return (
-      <div className="py-20 bg-gradient-to-br from-gray-950 via-gray-900">
+      <div className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 flex flex-col gap-20">
          <div className="container mx-auto px-5 md:px-20">
-            <h2 className="text-4xl font-extrabold text-center text-white mb-10">What Our Users Say</h2>
+            <h2 className="text-3xl font-extrabold text-start text-white mb-10">What Our Users Say</h2>
 
             {/* Slider main container */}
             <div className="swiper">
@@ -43,9 +43,9 @@ const Testimonials = () => {
                                  alt={testimonial.name}
                                  className="w-16 h-16 rounded-full border-2 border-purple-600 mr-4 shadow-md"
                               />
-                              <div>
+                              <div className='w-full h-full flex justify-start items-center gap-2'>
                                  <h3 className="text-xl font-bold text-gray-800">{testimonial.name}</h3>
-                                 <p className="text-gray-600">{testimonial.role}</p>
+                                 <p className="text-gray-600">{testimonial.date}</p>
                               </div>
                            </div>
                            <p className="text-gray-700 italic">{`"${testimonial.feedback}"`}</p>
@@ -57,6 +57,39 @@ const Testimonials = () => {
                {/* If we need pagination */}
                <div className="swiper-pagination"></div>
             </div>
+         </div>
+         <div className="container mx-auto px-5 md:px-20">
+            <h3 className="text-3xl font-bold text-white text-start py-10">Contact Us</h3>
+            <form className="space-y-6">
+               <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">Email</label>
+                  <input
+                     type="email"
+                     id="email"
+                     className="w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                     placeholder="Enter your email"
+                     required
+                  />
+               </div>
+               <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">Message</label>
+                  <textarea
+                     id="message"
+                     rows="4"
+                     className="w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                     placeholder="Your message..."
+                     required
+                  ></textarea>
+               </div>
+               <div className="text-center">
+                  <button
+                     type="submit"
+                     className="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-md shadow-md font-semibold transition-colors duration-200"
+                  >
+                     Submit
+                  </button>
+               </div>
+            </form>
          </div>
       </div>
    );
