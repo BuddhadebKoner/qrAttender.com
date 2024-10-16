@@ -23,7 +23,7 @@ const Features = () => {
           {FeatureCards.map((card) => (
             <div
               key={card.id}
-              className={`w-full md:w-1/3 md:px-5 px-2 h-fit bg-gradient-to-r ${card.gradient} bg-opacity-10 backdrop-blur-lg rounded-xl flex flex-col justify-center items-center py-5 gap-3 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 transform`}
+              className={`w-full md:w-1/3 md:px-5 px-2 h-fit bg-gradient-to-r ${card.gradient} bg-opacity-10 backdrop-blur-lg rounded-xl flex flex-col justify-center items-center py-5 gap-3 shadow-lg hover:shadow-2xl md:hover:scale-105 transition-all duration-300 transform`}
             >
               <img
                 width={50}
@@ -160,7 +160,7 @@ const Features = () => {
             <div key={index} className="border-b border-gray-200 pb-6">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left flex justify-between items-center py-4 text-xl font-semibold text-white hover:text-hero-text focus:outline-none transition-all duration-300"
+                  className="w-full text-left flex justify-between items-center py-4 text-xl font-semibold text-white hover:text-hero-text focus:outline-none transition-all duration-300"
               >
                 <span>{faq.question}</span>
                 <svg

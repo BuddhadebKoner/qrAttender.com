@@ -7,9 +7,11 @@ const Navbar = () => {
             </a>
             <a
                target="_blank"
-               href="https://play.google.com/store/apps/details?id=com.rajislab.qrattender" className="text-lg font-bold text-hero-text px-5 py-1 bg-white rounded-full flex items-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+               href="https://play.google.com/store/apps/details?id=com.rajislab.qrattender"
+               className="md:text-lg text-sm font-bold text-hero-text md:px-5 px-3 py-1 bg-white rounded-full flex items-center shadow-lg md:hover:shadow-xl transition-all duration-300 transform md:hover:scale-105">
                Download Now
-               <img className="mx-2" src="/assets/icons/download.svg" alt="download-icon" />
+               <img
+                  className="md:mx-2 mx-1 w-5 md:w-fit" src="/assets/icons/download.svg" alt="download-icon" />   
             </a>
          </div>
       </>
