@@ -153,7 +153,7 @@ const Features = () => {
           ))}
         </div>
       </div>
-      <div className="w-full h-fit flex flex-col px-5 md:px-[10rem] lg:py-[10rem]">
+      <div className="w-full h-fit flex flex-col px-5 pb-20 md:px-[10rem] lg:py-[10rem]">
         <h3 className="text-2xl md:text-4xl font-extrabold text-start text-white mb-12">Frequently Asked Questions</h3>
         <div className="space-y-8">
           {faqData.map((faq, index) => (

@@ -36,16 +36,16 @@ const Testimonials = () => {
                <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => (
                      <div className="swiper-slide " key={testimonial.id}>
-                        <div className="bg-gradient-to-br from-white to-gray-100 rounded-lg p-8 shadow-xl transition-transform duration-300">
+                        <div className="bg-gradient-to-br from-white to-gray-100 rounded-lg p-5 shadow-xl transition-transform duration-300">
                            <div className="flex items-center mb-4">
                               <img
                                  src={testimonial.avatar}
                                  alt={testimonial.name}
-                                 className="w-16 h-16 rounded-full border-2 border-purple-600 mr-4 shadow-md"
+                                 className="w-12 h-12 rounded-full border-2 border-purple-600 mr-4 shadow-md"
                               />
-                              <div className='w-full h-full flex justify-start items-center gap-2'>
-                                 <h3 className="text-xl font-bold text-gray-800">{testimonial.name}</h3>
-                                 <p className="text-gray-600">{testimonial.date}</p>
+                              <div className='w-full h-full flex justify-start items-center gap-5'>
+                                 <h3 className="text-sm md:text-xl font-bold text-gray-800">{testimonial.name}</h3>
+                                 <p className="text-gray-600 text-sm">{testimonial.date}</p>
                               </div>
                            </div>
                            <p className="text-gray-700 italic">{`"${testimonial.feedback}"`}</p>
@@ -53,9 +53,9 @@ const Testimonials = () => {
                      </div>
                   ))}
                </div>
-
                {/* If we need pagination */}
                <div className="swiper-pagination"></div>
+
             </div>
          </div>
          <div className="container mx-auto px-5 md:px-20">
@@ -81,10 +81,10 @@ const Testimonials = () => {
                      required
                   ></textarea>
                </div>
-               <div className="text-center">
+               <div className="text-center flex justify-end">
                   <button
                      type="submit"
-                     className="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-md shadow-md font-semibold transition-colors duration-200"
+                     className="px-6 py-3 bg-hero-text text-white rounded-md shadow-md font-semibold transition-colors duration-200"
                   >
                      Submit
                   </button>

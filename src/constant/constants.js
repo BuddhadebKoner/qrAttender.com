@@ -17,26 +17,34 @@ export const steps = [
 export const testimonials = [
   {
     id: 1,
-    name: "Nujahan",
-    date: "2 jun 2024 11:14",
-    feedback: "This app is amazing for taking attdance. scanning QR codes is quick, and i love how easy it is to use, it's saved ne so mutch tiem every day.",
-    avatar: "https://via.placeholder.com/100",
+    name: "Lozel Listones",
+    date: "19 Aug 2024, 13:10",
+    feedback: "This app has been a game-changer for managing attendance. The QR code scanning feature is incredibly fast, and the user-friendly interface has significantly streamlined my daily workflow. It's truly a time-saver!",
+    avatar: "/assets/reviews/Lozel_Listones.png",
   },
   {
     id: 2,
-    name: "Isaac Echazarreta Nieves",
-    date: "21 Sept 08:39",
-    feedback: "Many thanks to Raji's Lab for the prompt attention to the problem that the application presented. The recent update (09/15/2024) achieved correct and smooth operation.",
-    avatar: "https://via.placeholder.com/100", // Replace with actual avatar URL
+    name: "Echazarreta Nieves",
+    date: "21 Sept 2024, 08:39",
+    feedback: "A huge thanks to Raji's Lab for addressing the issue so quickly! The latest update (09/15/2024) has enhanced the app’s performance, making it run flawlessly and efficiently. Highly appreciated!",
+    avatar: "/assets/reviews/Isaac_Echazarreta_Nieves.png",
   },
   {
     id: 3,
     name: "Julio César",
-    date: "12 Oct 19:23",
-    feedback: "I still don't understand the value of paying for a subscription but I will continue testing, I like what it does and I think it could be useful to the teaching profession, based on my experience.",
-    avatar: "https://via.placeholder.com/100",
+    date: "12 Oct 2024, 19:23",
+    feedback: "I’m impressed with what this app offers. While I’m still exploring the full benefits of the subscription, its features seem promising and very relevant to the teaching profession. Looking forward to seeing more!",
+    avatar: "/assets/reviews/Julio_Cesar.png",
+  },
+  {
+    id: 4,
+    name: "Nujahan",
+    date: "2 Jun 2024, 11:14",
+    feedback: "This app has been a game-changer for managing attendance. The QR code scanning feature is incredibly fast, and the user-friendly interface has significantly streamlined my daily workflow. It's truly a time-saver!",
+    avatar: "/assets/reviews/Nurjahan.png",
   },
 ];
+
 
 // cardData.js
 export const FeatureCards = [
@@ -73,22 +81,22 @@ export const FeatureCards = [
 export const faqData = [
   {
     question: "How does QR Attender work?",
-    answer: "QR Attender uses cutting-edge QR code scanning technology to streamline attendance management. Simply scan your personalized QR code, and your attendance is logged instantly—no fuss, no paperwork!",
+    answer: "QR Attender uses advanced QR code scanning technology to simplify attendance tracking. Once you create your personalized QR code, all it takes is a quick scan to log your attendance. It’s perfect for schools, events, or any organization, as it eliminates the need for manual record-keeping and makes the entire process seamless and paperless.",
   },
   {
     question: "Is QR Attender secure?",
-    answer: "Absolutely! QR Attender ensures that all your data is encrypted and securely stored, giving you peace of mind while managing attendance with ease.",
+    answer: "Yes, QR Attender prioritizes your data security. All attendance records and personal data are encrypted and securely stored on our servers, ensuring that only authorized users have access. We use industry-standard security protocols, so you can focus on managing attendance without worrying about data breaches or privacy issues.",
   },
   {
     question: "How do I create a QR ID card?",
-    answer: "Creating a QR ID card is quick and simple! After registering, head over to the 'Create QR ID' section, upload your details, and get your unique QR code instantly.",
+    answer: "Creating your own QR ID card is quick and hassle-free! After you sign up, navigate to the 'Create QR ID' section. Simply upload your necessary information such as name and details, and our system will generate a unique QR code for you in seconds. This code is then linked to your profile and ready to use for attendance scanning.",
   },
   {
     question: "How do I download attendance reports?",
-    answer: "Downloading attendance reports is effortless! Navigate to the reports section, select your desired timeframe, and export your attendance records with just a few clicks.",
+    answer: "Downloading attendance reports is incredibly easy and flexible. You can access your reports by heading to the 'Reports' section. From there, select the time period you're interested in—whether it's daily, weekly, or monthly—and export the data in a format of your choice. The report generation is fast and can be customized to your specific needs.",
   },
   {
-    question: "How to use QR Attender?",
-    answer: "Using QR Attender is a breeze! Simply register, create your QR ID, and start scanning for quick, efficient, and paperless attendance tracking at your events.",
+    question: "How do I use QR Attender?",
+    answer: "QR Attender is designed with simplicity in mind. Start by registering an account and creating your personal QR ID. Once that's done, all you have to do is scan your QR code at any participating location or event. The system will instantly log your attendance, saving you from dealing with cumbersome manual processes. You can also track your attendance history and download reports whenever needed.",
   }
 ];
