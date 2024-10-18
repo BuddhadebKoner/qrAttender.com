@@ -68,7 +68,7 @@ const Features = () => {
           We are the only one in market
         </h1>
         {/* About Us Section */}
-        <section className="mt-[10rem] w-full h-fit flex flex-col items-center justify-center py-20 md:px-0 px-[5px] rounded-xl shadow-lg">
+        <section className="mt-[10rem] w-full h-fit flex flex-col items-center justify-center md:py-20 md:px-0 px-[5px] rounded-xl shadow-lg">
           <div className="w-full max-w-6xl">
             <h2 className="text-4xl font-extrabold text-white mb-8 text-start w-full">
               {aboutUsData.title}

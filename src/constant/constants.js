@@ -185,5 +185,5 @@ export const aboutUsData = {
     { name: "LinkedIn", url: "https://www.linkedin.com/in/rajislab" },
     { name: "X", url: "https://x.com/Rajis_Lab" },
   ],
-  footerNote: "Check out more of our solutions at Raji’s Lab.",
+  footerNote: "Check out more of our solutions at rajislab.com",
 };

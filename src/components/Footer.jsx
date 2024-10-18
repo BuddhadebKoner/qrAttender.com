@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
    return (
       <footer className="text-white py-4 flex">
-         <div className="container mx-auto flex flex-col md:flex-row items-end justify-between">
+         <div className="container mx-auto flex flex-col md:flex-row items-center md:items-end justify-between gap-2">
             <img
                className="w-12 h-12"
                src="/qrAttender.svg"
