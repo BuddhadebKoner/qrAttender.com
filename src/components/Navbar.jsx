@@ -3,7 +3,7 @@ const Navbar = () => {
       <>
          <div className="bg-white/10 backdrop-blur-md w-full h-full py-3 px-5 rounded-lg flex justify-between items-center shadow-md">
             <a href="/">
-               <h1 className="text-lg font-bold text-hero-text">Qr Attender</h1>
+               <h1 className="text-lg font-bold text-white">Qr Attender</h1>
             </a>
             <a
                target="_blank"

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { faqData, FeatureCards, steps } from "../constant/constants";
+import { aboutUsData, faqData, FeatureCards, keyFeatures, steps } from "../constant/constants";
 
 const Features = () => {
   // State to manage which FAQ is open
@@ -11,6 +11,7 @@ const Features = () => {
   };
   return (
     <>
+      {/* App Features */}
       <div className=" px-5 md:px-[5rem] w-full h-fit flex flex-col items-center justify-center py-[5rem]">
         <h1 className="text-3xl md:text-4xl text-white font-extrabold">
           App <span className="text-hero-text">Features</span>
@@ -40,6 +41,7 @@ const Features = () => {
           ))}
         </div>
       </div>
+      {/* Why We Use QR Attender App */}
       <div className="rounded-xl w-full h-fit flex flex-col items-center justify-center px-5 lg:px-[10rem] md:py-[10rem] py-10 mt-10 md:bg-[#030712]">
         <h1 className="md:text-4xl text-3xl text-white font-extrabold mb-5 text-center">
           Why We Use<br /> <span className="text-hero-text">QR Attender App</span>
@@ -47,92 +49,79 @@ const Features = () => {
         <p className="text-gray-400 text-center text-lg mb-10">
           Discover the top reasons why QR Attender App is a must-have tool for modern event management and attendance tracking.
         </p>
-
         {/* Cards Container */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* card 6 */}
-          <div className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/10 p-2 rounded-full"
-              src="/assets/icons/speed.svg"
-              alt="speed" />
-            <h1 className="text-white font-bold text-xl">Fast and Efficient</h1>
-            <p className="text-white text-center text-sm">
-              Instant check-ins and attendance tracking, reducing time spent on manual record-keeping.
-            </p>
-          </div>
-          {/* card 1 */}
-          <div className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/10 p-2 rounded-full"
-              src="/assets/icons/speed.svg"
-              alt="speed" />
-            <h1 className="text-white font-bold text-xl">Fast and Efficient</h1>
-            <p className="text-white text-center text-sm">
-              Instant check-ins and attendance tracking, reducing time spent on manual record-keeping.
-            </p>
-          </div>
-          {/* card 2 */}
-          <div className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/10 p-2 rounded-full"
-              src="/assets/icons/speed.svg"
-              alt="speed" />
-            <h1 className="text-white font-bold text-xl">Fast and Efficient</h1>
-            <p className="text-white text-center text-sm">
-              Instant check-ins and attendance tracking, reducing time spent on manual record-keeping.
-            </p>
-          </div>
-          {/* crad 3 */}
-          <div className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/10 p-2 rounded-full"
-              src="/assets/icons/speed.svg"
-              alt="speed" />
-            <h1 className="text-white font-bold text-xl">Fast and Efficient</h1>
-            <p className="text-white text-center text-sm">
-              Instant check-ins and attendance tracking, reducing time spent on manual record-keeping.
-            </p>
-          </div>
-          {/* card 4 */}
-          <div className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/10 p-2 rounded-full"
-              src="/assets/icons/speed.svg"
-              alt="speed" />
-            <h1 className="text-white font-bold text-xl">Fast and Efficient</h1>
-            <p className="text-white text-center text-sm">
-              Instant check-ins and attendance tracking, reducing time spent on manual record-keeping.
-            </p>
-          </div>
-          {/* card 5 */}
-          <div className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
-            <img
-              width={50}
-              height={50}
-              className="bg-white/10 p-2 rounded-full"
-              src="/assets/icons/speed.svg"
-              alt="speed" />
-            <h1 className="text-white font-bold text-xl">Fast and Efficient</h1>
-            <p className="text-white text-center text-sm">
-              Instant check-ins and attendance tracking, reducing time spent on manual record-keeping.
-            </p>
-          </div>
+          {keyFeatures.map((feature, index) => (
+            <div key={index} className="w-full h-64 bg-[#111827] rounded-xl flex flex-col justify-center items-center gap-3 p-5 shadow-xl">
+              <img
+                width={50}
+                height={50}
+                className="bg-white/10 p-2 rounded-full"
+                src={feature.icon}
+                alt={feature.title} />
+              <h1 className="text-white font-bold text-xl">{feature.title}</h1>
+              <p className="text-white text-center text-sm">{feature.description}</p>
+            </div>
+          ))}
         </div>
-        <h1 className="text-white mt-10 bg-hero-text px-5 py-2 text-xl font-semibold rounded-full">We are the only one in market</h1>
+        <h1 className="text-white mt-10 bg-hero-text px-5 py-2 text-xl font-semibold rounded-full">
+          We are the only one in market
+        </h1>
+        {/* About Us Section */}
+        <section className="mt-[10rem] w-full h-fit flex flex-col items-center justify-center py-20 md:px-0 px-[5px] rounded-xl shadow-lg">
+          <div className="w-full max-w-6xl">
+            <h2 className="text-4xl font-extrabold text-white mb-8 text-start w-full">
+              {aboutUsData.title}
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed text-start mb-12 w-full">
+              {aboutUsData.description}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-6xl">
+            {aboutUsData.teamMembers.map((member) => (
+              <a
+                key={member.name}
+                target="_blank"
+                href={member.linkedin}
+                className="flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
+              >
+                <img
+                  src={member.image}
+                  alt={member.alt}
+                  className="w-28 h-28 mb-4 rounded-full shadow-md object-cover"
+                />
+                <h3 className="text-xl font-semibold text-white">{member.name}</h3>
+              </a>
+            ))}
+          </div>
+          <div className="mt-12 text-start w-full max-w-6xl">
+            <h3 className="text-2xl font-semibold text-white">
+              {aboutUsData.callToAction.title}
+            </h3>
+            <p className="text-gray-300 mt-4">
+              {aboutUsData.callToAction.contactDescription}
+            </p>
+            <div className="mt-8 flex justify-center space-x-8 flex-wrap">
+              {aboutUsData.socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  target="_blank"
+                  href={link.url}
+                  className="text-white hover:text-gray-400"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+            <p className="text-white font-semibold mt-10">
+              {aboutUsData.footerNote}
+            </p>
+          </div>
+        </section>
       </div>
+      {/* Your 7 Steps to Use Our App */}
       <div className="w-full h-fit flex flex-col items-center justify-center px-5 lg:px-[10rem] py-[5rem] mt-10 shadow-lg">
-        <h1 className="md:text-4xl md:pb-[5rem] text-2xl text-hero-text font-extrabold mb-10">Your 7 Steps to Use Our App</h1>
+        <h1 className="md:text-4xl md:pb-[5rem] text-2xl text-hero-text font-extrabold mb-10">Your 5 Steps to Use Our App</h1>
 
         <div className="relative w-full">
           {steps.map((step, index) => (
@@ -153,6 +142,7 @@ const Features = () => {
           ))}
         </div>
       </div>
+      {/* Frequently Asked Questions */}
       <div className="w-full h-fit flex flex-col px-5 pb-20 md:px-[10rem] lg:py-[10rem]">
         <h3 className="text-2xl md:text-4xl font-extrabold text-start text-white mb-12">Frequently Asked Questions</h3>
         <div className="space-y-8">
@@ -160,7 +150,7 @@ const Features = () => {
             <div key={index} className="border-b border-gray-200 pb-6">
               <button
                 onClick={() => toggleFAQ(index)}
-                  className="w-full text-left flex justify-between items-center py-4 text-xl font-semibold text-white hover:text-hero-text focus:outline-none transition-all duration-300"
+                className="w-full text-left flex justify-between items-center py-4 text-xl font-semibold text-white hover:text-hero-text focus:outline-none transition-all duration-300"
               >
                 <span>{faq.question}</span>
                 <svg
@@ -187,7 +177,6 @@ const Features = () => {
           ))}
         </div>
       </div>
-
     </>
   );
 }

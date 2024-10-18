@@ -5,9 +5,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import { testimonials } from '../constant/constants';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Testimonials = () => {
-   // Initialize Swiper when the component mounts
    React.useEffect(() => {
       new Swiper('.swiper', {
          modules: [Navigation, Pagination],
@@ -24,6 +24,10 @@ const Testimonials = () => {
          slidesPerView: 1,
       });
    }, []);
+
+   // Formspree Space ID
+   const FORM_SPACE_ID = import.meta.env.VITE_FORM_SPACE_ID;
+   const [state, handleSubmit] = useForm(FORM_SPACE_ID);
 
    return (
       <div className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 flex flex-col gap-20">
@@ -58,38 +62,89 @@ const Testimonials = () => {
 
             </div>
          </div>
-         <div className="container mx-auto px-5 md:px-20">
-            <h3 className="text-3xl font-bold text-white text-start py-10">Contact Us</h3>
-            <form className="space-y-6">
-               <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">Email</label>
-                  <input
-                     type="email"
-                     id="email"
-                     className="w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-                     placeholder="Enter your email"
-                     required
-                  />
+         {/* contact us */}
+         <div className="container mx-auto px-5 md:px-20 py-10">
+            <h3 className="text-3xl font-bold text-white text-start py-5">Contact Us</h3>
+
+            {/* Success Message */}
+            {state.succeeded ? (
+               <p className="text-lg text-green-400">Thanks for reaching out! We will get back to you soon.</p>
+            ) : (
+               <form onSubmit={handleSubmit} className="space-y-6">
+
+                  {/* Email Field */}
+                  <div>
+                     <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">Email</label>
+                     <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                        placeholder="Enter your email"
+                        required
+                     />
+                     {state.errors && state.errors.length > 0 && (
+                        <ValidationError
+                           prefix="Email"
+                           field="email"
+                           errors={state.errors}
+                           className="text-red-500 text-sm mt-1"
+                        />
+                     )}
+                  </div>
+
+                  {/* Message Field */}
+                  <div>
+                     <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">Message</label>
+                     <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        className="w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                        placeholder="Your message..."
+                        required
+                     />
+                     {state.errors && state.errors.length > 0 && (
+                        <ValidationError
+                           prefix="Message"
+                           field="message"
+                           errors={state.errors}
+                           className="text-red-500 text-sm mt-1"
+                        />
+                     )}
+                  </div>
+
+                  {/* Submit Button with Loading Indicator */}
+                  <div className="text-center flex justify-end">
+                     <button
+                        type="submit"
+                        disabled={state.submitting}
+                        className={`px-6 py-3 rounded-md shadow-md font-semibold transition-colors duration-200 text-white ${state.submitting ? 'bg-gray-500 cursor-not-allowed' : 'bg-hero-text hover:bg-purple-700'}`}
+                     >
+                        {state.submitting ? (
+                           <span className="flex items-center">
+                              <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8h8a8 8 0 01-8 8V4z"></path>
+                              </svg>
+                              Sending...
+                           </span>
+                        ) : (
+                           'Submit'
+                        )}
+                     </button>
+                  </div>
+               </form>
+            )}
+
+            {/* Error Handling */}
+            {state.errors && state.errors.length > 0 && (
+               <div className="mt-5 text-center">
+                  <p className="text-red-500 font-medium">
+                     Oops! Something went wrong. Please check your details and try again.
+                  </p>
                </div>
-               <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">Message</label>
-                  <textarea
-                     id="message"
-                     rows="4"
-                     className="w-full p-3 rounded-md border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-                     placeholder="Your message..."
-                     required
-                  ></textarea>
-               </div>
-               <div className="text-center flex justify-end">
-                  <button
-                     type="submit"
-                     className="px-6 py-3 bg-hero-text text-white rounded-md shadow-md font-semibold transition-colors duration-200"
-                  >
-                     Submit
-                  </button>
-               </div>
-            </form>
+            )}
          </div>
       </div>
    );

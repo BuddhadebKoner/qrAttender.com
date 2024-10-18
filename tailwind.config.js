@@ -9,7 +9,7 @@ export default {
       colors: {
         bg: '#111111',
         hero: {
-          text: '#ff7700', 
+          text: '#DC143C', 
         },
         btn: {
           primary: '#FF585B', 
