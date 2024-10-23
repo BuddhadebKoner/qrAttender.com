@@ -64,7 +64,7 @@ const Features = () => {
             </div>
           ))}
         </div>
-        <h1 className="text-white mt-10 bg-hero-text px-5 py-2 text-xl font-semibold rounded-full">
+        <h1 className="text-white mt-10 bg-hero-text px-5 py-2 text-sm lg:text-xl font-semibold rounded-full ">
           We are the only one in market
         </h1>
         {/* About Us Section */}
@@ -109,12 +109,20 @@ const Features = () => {
                   href={link.url}
                   className="text-white hover:text-gray-400"
                 >
-                  {link.name}
+                  <img
+                    className="w-8 h-8"
+                    src={link.icon}
+                    alt={link.name} />
                 </a>
               ))}
             </div>
             <p className="text-white font-semibold mt-10">
               {aboutUsData.footerNote}
+              <a
+                className="text-hero-text underline ml-2"
+                target="_blank"
+                href="https://rajislab.com/">
+                rajislab.com</a>
             </p>
           </div>
         </section>

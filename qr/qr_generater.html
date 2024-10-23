@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR ID Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            /* width: 100%; */
+            /* max-width: 5cm;
+            height: 9.16cm; */
+            max-width: 54mm; /* Credit card width */
+            max-height: 85.6mm; /* Credit card height */
+            background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
+            border: 3px solid #000080;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .pouch-hole {
+            width: 15mm;
+            height: 4mm;
+            background-color: #e0e0e0;
+            border-radius: 2mm;
+            border: 1px solid #868686;
+            position: absolute;
+            top: 2mm;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card h1 {
+            font-size: 20px;
+            color: #000080;
+            margin: 15px 0 5px 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            color: #333333;
+            margin: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #qrcode-container {
+            position: relative;
+            background-color: #ffffe0;
+            padding: 10px;
+            border: 2px solid #000080;
+            border-radius: 10px;
+        }
+
+        #qrcode {
+            width: 148px;
+            height: 148px;
+        }
+
+        #logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .info {
+            font-size: 14px;
+            color: #000080;
+            text-align: center;
+              margin-top: 10px;
+        }
+
+        .info p {
+            margin: 2px 0;
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            max-width: 220px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000080;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333399;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <div class="pouch-hole"></div>
+        <h1>QR Attender
+        <p class="subtitle">Your Daily Attendance App</p></h1>
+        <div id="qrcode-container">
+            <div id="qrcode"></div>
+            <img id="logo" src="logo.png" alt="logo">
+        </div>
+        <div class="info">
+            <p><span id="name-display">Name</span></p>
+            <p><span id="roll-display">Roll</span></p>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <input type="number" id="roll" placeholder="Enter Roll" required>
+        <input type="text" id="name" placeholder="Enter Name" oninput="this.value = this.value.toUpperCase()" required>
+        <button onclick="generateQRCode()">Submit</button>
+    </div>
+
+    <div class="button-container">
+        <button onclick="downloadCard()">Download Card</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        const rollInput = document.getElementById('roll');
+        const nameInput = document.getElementById('name');
+        const qrcodeDiv = document.getElementById('qrcode');
+        const rollDisplay = document.getElementById('roll-display');
+        const nameDisplay = document.getElementById('name-display');
+        const logo = document.getElementById('logo');
+        let qrcode;
+
+        // Generate default QR code
+        qrcode = new QRCode(qrcodeDiv, {
+            text: 'Roll,Name',
+            width: 148,
+            height: 148,
+            colorDark: '#000080',
+            colorLight: '#ffffe0',
+            correctLevel: QRCode.CorrectLevel.H,
+        });
+
+
+        function generateQRCode() {
+    const roll = rollInput.value.trim();
+    const name = nameInput.value.trim();
+
+    if (!roll || !name) {
+        alert('Please enter both Roll and Name.');
+        return;
+    }
+
+    const data = `${roll},${name}`;
+
+    rollDisplay.textContent = roll;
+    nameDisplay.textContent = name;
+
+    qrcodeDiv.innerHTML = ''; // Clear the previous QR code
+
+    qrcode = new QRCode(qrcodeDiv, {
+        text: data || '', // Use default text if data is empty
+        width: 148,
+        height: 148,
+        colorDark: '#000080',
+        colorLight: '#ffffe0',
+        correctLevel: QRCode.CorrectLevel.H,
+    });
+
+    // Ensure logo is visible
+    logo.style.display = 'block';
+}
+
+        function downloadCard() {
+            const card = document.getElementById('card');
+            const roll = rollInput.value || 'Roll';
+            const name = nameInput.value || 'Name';
+            html2canvas(card, {
+                scale: 3,
+                useCORS: true,
+                backgroundColor: null
+            }).then(function(canvas) {
+                // Round corners for the canvas
+                const ctx = canvas.getContext('2d');
+                ctx.beginPath();
+                ctx.moveTo(15, 0);
+                ctx.lineTo(canvas.width - 15, 0);
+                ctx.quadraticCurveTo(canvas.width, 0, canvas.width, 15);
+                ctx.lineTo(canvas.width, canvas.height - 15);
+                ctx.quadraticCurveTo(canvas.width, canvas.height, canvas.width - 15, canvas.height);
+                ctx.lineTo(15, canvas.height);
+                ctx.quadraticCurveTo(0, canvas.height, 0, canvas.height - 15);
+                ctx.lineTo(0, 15);
+                ctx.quadraticCurveTo(0, 0, 15, 0);
+                ctx.closePath();
+                ctx.clip();
+
+                const link = document.createElement('a');
+                link.download = `${name}_${roll}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>

@@ -179,11 +179,15 @@ export const aboutUsData = {
     contactDescription: "Contact us today to learn more about how QR Attender can benefit your organization.",
   },
   socialLinks: [
-    { name: "Instagram", url: "https://www.instagram.com/rajis_lab" },
-    { name: "Facebook", url: "https://www.facebook.com/rajislab.fb" },
-    { name: "YouTube", url: "https://www.youtube.com/@rajislab?sub_confirmation=1" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/rajislab" },
-    { name: "X", url: "https://x.com/Rajis_Lab" },
+    { name: "Instagram", url: "https://www.instagram.com/rajis_lab", icon: '/assets/icons/media/insta.png' },
+    { name: "Facebook", url: "https://www.facebook.com/rajislab.fb", icon: '/assets/icons/media/fb.svg' },
+    { name: "YouTube", url: "https://www.youtube.com/@rajislab?sub_confirmation=1", icon: '/assets/icons/media/youtube.svg' },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/rajislab", icon: '/assets/icons/media/linkedin.svg' },
+    { name: "X", url: "https://x.com/Rajis_Lab", icon: '/assets/icons/media/x.svg' },
   ],
-  footerNote: "Check out more of our solutions at rajislab.com",
+  footerNote: "Check out more of our solutions at",
 };
+
+
+
+

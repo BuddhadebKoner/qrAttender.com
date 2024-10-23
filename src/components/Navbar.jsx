@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
    return (
       <>
          <div className="bg-white/10 backdrop-blur-md w-full h-full py-3 px-5 rounded-lg flex justify-between items-center shadow-md">
-            <a href="/">
+            <Link to="/">
                <h1 className="text-lg font-bold text-white">Qr Attender</h1>
-            </a>
+            </Link>
             <a
                target="_blank"
                href="https://play.google.com/store/apps/details?id=com.rajislab.qrattender"

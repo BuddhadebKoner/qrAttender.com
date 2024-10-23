@@ -119,7 +119,7 @@ const Testimonials = () => {
                      <button
                         type="submit"
                         disabled={state.submitting}
-                        className={`px-6 py-3 rounded-md shadow-md font-semibold transition-colors duration-200 text-white ${state.submitting ? 'bg-gray-500 cursor-not-allowed' : 'bg-hero-text hover:bg-purple-700'}`}
+                        className={`px-4 lg:px-6 py-1 lg:py-3 rounded-md shadow-md font-semibold transition-colors duration-200 text-white ${state.submitting ? 'bg-gray-500 cursor-not-allowed' : 'bg-hero-text hover:bg-slate-500'}`}
                      >
                         {state.submitting ? (
                            <span className="flex items-center">
