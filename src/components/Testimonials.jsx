@@ -3,14 +3,14 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { testimonials } from '../constant/constants';
 import { useForm, ValidationError } from '@formspree/react';
 
 const Testimonials = () => {
    React.useEffect(() => {
       new Swiper('.swiper', {
-         modules: [Navigation, Pagination],
+         modules: [Navigation, Pagination, Autoplay],
          navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -22,6 +22,10 @@ const Testimonials = () => {
          loop: true,
          spaceBetween: 30,
          slidesPerView: 1,
+         autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+         },
       });
    }, []);
 
@@ -31,6 +35,7 @@ const Testimonials = () => {
 
    return (
       <div className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 flex flex-col gap-20">
+         
          <div className="container mx-auto px-5 md:px-20">
             <h2 className="text-3xl font-extrabold text-start text-white mb-10">What Our Users Say</h2>
 

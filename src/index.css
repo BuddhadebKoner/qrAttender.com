@@ -9,3 +9,35 @@ html {
 body {
   @apply bg-bg max-w-full min-h-screen overflow-x-hidden overflow-y-auto;
 }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+
+  /* Customize scrollbar for Chrome, Edge, and Safari */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  /* Customize scrollbar for Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4B5563 #1F2937; /* thumb color, track color */
+  }
+}

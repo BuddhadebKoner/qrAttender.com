@@ -12,7 +12,7 @@ const Features = () => {
   return (
     <>
       {/* App Features */}
-      <div className=" px-5 md:px-[5rem] w-full h-fit flex flex-col items-center justify-center py-[5rem]">
+      <div className="px-5 md:px-[5rem] w-full h-fit flex flex-col items-center justify-center py-[5rem]">
         <h1 className="text-3xl md:text-4xl text-white font-extrabold">
           App <span className="text-hero-text">Features</span>
         </h1>
@@ -42,7 +42,18 @@ const Features = () => {
         </div>
       </div>
       {/* Why We Use QR Attender App */}
-      <div className="rounded-xl w-full h-fit flex flex-col items-center justify-center px-5 lg:px-[10rem] md:py-[10rem] py-10 mt-10 md:bg-[#030712]">
+      <div className="relative rounded-xl w-full h-fit flex flex-col items-center justify-center px-5 lg:px-[10rem] md:py-[10rem] py-10 mt-10 ">
+        {/* Background Shapes */}
+        <div className="absolute inset-0 -z-10">
+          {/* Abstract Gradient Shape 1 */}
+          <div className="absolute top-0 left-0 w-[30rem] h-[30rem] md:w-[50rem] md:h-[50rem] bg-gradient-to-tr from-indigo-500 via-purple-600 to-blue-400 opacity-30 blur-[140px] rounded-full"></div>
+
+          {/* Abstract Gradient Shape 2 */}
+          <div className="absolute top-[40%] left-[20%] w-[25rem] h-[25rem] md:w-[45rem] md:h-[45rem] bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-700 opacity-25 blur-[160px] rounded-full"></div>
+
+          {/* Abstract Gradient Shape 3 */}
+          <div className="absolute bottom-[-5rem] right-[-10rem] w-[35rem] h-[35rem] md:w-[55rem] md:h-[55rem] bg-gradient-to-bl from-blue-300 via-teal-400 to-cyan-500 opacity-20 blur-[150px] rounded-full"></div>
+        </div>
         <h1 className="md:text-4xl text-3xl text-white font-extrabold mb-5 text-center">
           Why We Use<br /> <span className="text-hero-text">QR Attender App</span>
         </h1>
@@ -68,7 +79,7 @@ const Features = () => {
           We are the only one in market
         </h1>
         {/* About Us Section */}
-        <section className="mt-[10rem] w-full h-fit flex flex-col items-center justify-center md:py-20 md:px-0 px-[5px] rounded-xl shadow-lg">
+        <section className="mt-[10rem] w-full h-fit flex flex-col items-center justify-center md:py-20 md:px-0 px-[5px] rounded-xl">
           <div className="w-full max-w-6xl">
             <h2 className="text-4xl font-extrabold text-white mb-8 text-start w-full">
               {aboutUsData.title}
@@ -128,7 +139,7 @@ const Features = () => {
         </section>
       </div>
       {/* Your 7 Steps to Use Our App */}
-      <div className="w-full h-fit flex flex-col items-center justify-center px-5 lg:px-[10rem] py-[5rem] mt-10 shadow-lg">
+      <div className="w-full h-fit flex flex-col items-center justify-center px-5 lg:px-[10rem] py-[5rem] mt-10">
         <h1 className="md:text-4xl md:pb-[5rem] text-2xl text-hero-text font-extrabold mb-10">Your 5 Steps to Use Our App</h1>
 
         <div className="relative w-full">
