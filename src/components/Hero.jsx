@@ -18,7 +18,7 @@ const Hero = () => {
             target="_blank"
             href="https://qrcards.rajislab.com/"
             className="w-fit h-fit bg-hero-text text-white px-4 lg:px-10 py-2 rounded-full mt-5 text-sm lg:text-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform md:hover:scale-105 hover:bg-opacity-90 relative z-10">
-            Generate QR ID
+            Generate QR CARDS
          </a>
          {/* <p className="text-gray-400 mt-10 relative z-10">to being a premium member</p>
             <div className="flex gap-5 justify-center items-center">

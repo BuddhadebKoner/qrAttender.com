@@ -35,7 +35,7 @@ const Testimonials = () => {
 
    return (
       <div className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 flex flex-col gap-20">
-         
+
          <div className="container mx-auto px-5 md:px-20">
             <h2 className="text-3xl font-extrabold text-start text-white mb-10">What Our Users Say</h2>
 
