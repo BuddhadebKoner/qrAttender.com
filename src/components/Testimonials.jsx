@@ -44,7 +44,7 @@ const Testimonials = () => {
                {/* Additional required wrapper */}
                <div className="swiper-wrapper">
                   {testimonials.map((testimonial) => (
-                     <div className="swiper-slide " key={testimonial.id}>
+                     <div className="swiper-slide" key={testimonial.id}>
                         <div className="bg-gradient-to-br from-white to-gray-100 rounded-lg p-5 shadow-xl transition-transform duration-300">
                            <div className="flex items-center mb-4">
                               <img
@@ -52,16 +52,31 @@ const Testimonials = () => {
                                  alt={testimonial.name}
                                  className="w-12 h-12 rounded-full border-2 border-purple-600 mr-4 shadow-md"
                               />
-                              <div className='w-full h-full flex justify-start items-center gap-5'>
+                              <div className="w-full h-full flex justify-start items-center gap-5">
                                  <h3 className="text-sm md:text-xl font-bold text-gray-800">{testimonial.name}</h3>
                                  <p className="text-gray-600 text-sm">{testimonial.date}</p>
                               </div>
+                           </div>
+                           <div className="flex items-center mb-2">
+                              {/* 5 Star rating */}
+                              {Array.from({ length: 5 }).map((_, index) => (
+                                 <svg
+                                    key={index}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    className="w-4 h-4 text-yellow-500"
+                                 >
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                 </svg>
+                              ))}
                            </div>
                            <p className="text-gray-700 italic">{`"${testimonial.feedback}"`}</p>
                         </div>
                      </div>
                   ))}
                </div>
+
                {/* If we need pagination */}
                <div className="swiper-pagination"></div>
 
